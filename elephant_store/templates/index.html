@@ -1,0 +1,23 @@
+{% extends "store.html" %}
+{% block content %}
+        <div class="album vw-100 py-5 bg-body-tertiary">
+        <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for prod in products %}
+        <a href="product/{{ prod.id }}/" class="d-flex align-items-center me-lg-auto link-body-emphasis text-decoration-none">
+        <div class="col"> <div class="card shadow-sm"> 
+                <svg aria-label="Placeholder: Thumbnail" class="bd-placeholder-img card-img-top" height="125" preserveAspectRatio="xMidYMid slice" role="img" width="100%" xmlns="http://www.w3.org/2000/svg"><title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="{{ prod.color }}">
+                                <img src="{{ prod.pic.url }}" width="100%" height="300px" alt="Фото слона">
+                        </rect></svg>
+                <div class="card-body"> 
+                        <p class="card-text">
+                        {{ prod.name }}<br>
+                        <u>{{ prod.get_age }} лет</u><br>
+                        <b>{{ prod.price }} рублей</b></p>
+        </div></div></div>
+        </a>
+        {% endfor %}
+        </div></div></div>
+{% endblock content %}
+

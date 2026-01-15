@@ -1,0 +1,25 @@
+{% extends "store.html" %}
+{% block content %}
+<div class="container bg-body-tertiary border border-bottom-0">
+        <img class="img-fluid img-thumbnail rounded mx-auto d-block" src="{{ product.pic.url }}" alt="Фото слона">
+        <h2>{{ product.name }}</h2>
+        <h3><u>{{ product.price }}</u></h3>
+        <p>Дата рождения: {{ product.birthday }}</p><br>
+        <p>Слон</p>
+        {% for com in comments %}
+        <div class="py-2">
+        <div class="bg-light-subtle rounded-3 container py-1 border row row-cols-2">
+                <b class="col"><u>{{ com.user.get_full_name }}</u></b><small class="text-body-secondary col float-end text-end">{{ com.datetime }}</small>
+                <p>{{ com.text }}</p>
+        </div></div>
+        {% empty %}
+        <i class="text-center">Нет комментариев, будьте первым!</i>
+        {% endfor %}
+        <form method="post">
+                {% csrf_token %}
+                <textarea name="text" class="form-control" required placeholder="Оставьте комментарий..."></textarea>
+                <button type="submit" class="btn btn-success" >Отправить</button>
+        </form>
+</div>
+{% endblock content %}
+

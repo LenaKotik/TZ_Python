@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block body %}
+        <div class="container py-5">
+        <h1 class="h3 mb-3 fw-normal">Войдите в аккаунт</h1>
+        <form method="post">
+        {% include "form.html" %}
+        <hr>
+        <button class="btn btn-primary w-100 py-2" type="submit">Войти</button>
+        </form>
+        <u><a class="py-5 d-block link-body-emphasis text-body-secondary text-decoration-none" href="/restorepassword/">Восстановить пароль</a></u><br/>
+        <u><a class="d-block link-body-emphasis text-body-secondary text-decoration-none" href="/signup/">Зарегистрироваться</a></u>
+        </div>
+{% endblock body %}

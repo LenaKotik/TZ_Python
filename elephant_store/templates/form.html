@@ -1,0 +1,18 @@
+{% load widget_tweaks %}
+{% csrf_token %}
+<div>
+        {% for field in form %}
+        <div class="form-floating">
+                <div>
+                {{field.label_tag}}
+                {{ field|add_class:"form-control" }}</div>
+                {% if field.errors%}
+                {% for error in field.errors %}
+                <div class="text-warning-emphasis bg-warning-subtle rounded-3">
+                        {{error}}
+                </div>
+                {% endfor %}
+                {% endif %}
+        </div>
+        {% endfor %}
+</div>

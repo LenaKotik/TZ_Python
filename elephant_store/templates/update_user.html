@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block body %}
+        <div class="container py-5">
+        <h1 class="h3 mb-3 fw-normal">Измените информацию</h1>
+        <form method="post" action="{{ user.get_hash }}/update/">
+        {% include "form.html" %}
+        <hr>
+        <button class="btn btn-primary w-100 py-2" type="submit">Сохранить</button>
+        </form>
+        </div>
+{% endblock body %}

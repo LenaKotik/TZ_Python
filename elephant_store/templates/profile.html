@@ -1,0 +1,27 @@
+{% extends "store.html" %}
+{% block content %}
+<div class="container py-5 align-items-center justify-content-md-center col col-lg-2">
+        <div class="form-floating w-50 py-3">
+                <form method="post">
+                        {% csrf_token %}
+                        <input name="action" type="hidden" value="update">
+                        <input class="btn btn-primary my-2" type="submit" value="Изменить информацию">
+                </form>
+        </div>
+        <div class="form-floating w-50 py-3">
+                <form method="post">
+                        {% csrf_token %}
+                        <input name="action" type="hidden" value="logout">
+                        <input class="btn btn-primary my-2" type="submit" value="Выйти из аккаунта">
+                </form>
+        </div>
+        <div class="form-floating w-50 py-3">
+                <form method="post">
+                        {% csrf_token %}
+                        <input name="action" type="hidden" value="delete">
+                        <input class="btn btn-danger my-2" type="submit" value="Удалить аккаунт">
+                </form>
+        </div>
+</div>
+{% endblock content %}
+

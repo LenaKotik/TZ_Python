@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html class="h-100" data-bs-theme="dark">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}КупиСлона.ру{% endblock title %}</title>
+        <link rel="stylesheet" href="{% static "css/style.css" %}" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="icon" href="{% static "favicon.ico" %}" />
+        
+    </head>
+    <body class="d-flex flex-column h-100 align-items-center">
+    <main>
+        {% block body %} talking fish download video {% endblock body %}
+    </main>
+    <footer class="footer mt-auto bg-body-tertiary w-100 bottom-0">
+        <div class="container"> 
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3"> 
+            </ul> 
+            <p class="text-center">{% now "l" %}</p>
+            <p class="text-center">Связаться с нами: <u>slonik@example.ru</u></p>
+            <p class="text-center text-body-secondary">© 2026 Slon, Inc</p> 
+        </div></footer></body></html>
